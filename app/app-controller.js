@@ -17,5 +17,5 @@ angular.module('app')
 			$stateParams.username = $scope.username;
 			$state.transitionTo('user', $stateParams);
 		}
-	};	
+	};
 });

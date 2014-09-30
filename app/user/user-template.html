@@ -1,8 +1,8 @@
 <div>
 	<div>
 		<h2>{{user.name}}</h2>
-		<h3>{{user.login}}</h3>
-		<img src="{{user.avatar_url}}" alt="{{user.name}}" class="img-rounded">
+		<h3><a href="{{user.html_url}}" target="_blank">{{user.login}}</a></h3>
+		<img src="{{user.avatar_url}}" alt="{{user.name}}" class="user-thumb img-rounded">
 
 		<div ui-view></div>
 	<div>

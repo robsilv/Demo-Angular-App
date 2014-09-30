@@ -1,6 +1,6 @@
 <div>
 	<h2 ng-show="repos !== undefined">Repositories</h2>
 	<div class="" ng-repeat="repo in repos" index="{{$index}}">
-		<button type="button" class="btn btn-primary" ng-click="goToRepo(repo)">{{repo.name}}</button>
+		<button type="button" class="btn btn-primary btn-float" ng-click="goToRepo(repo)">{{repo.name}}</button>
 	</div>
 </div>

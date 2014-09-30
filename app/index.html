@@ -8,12 +8,16 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<base href="/">
 		<title>AngularJS Boilerplate</title>
-	    <!-- Bootstrap core CSS -->
-	    <link href="vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"/>
-	    <!-- Bootstrap theme -->
-	    <link href="vendor/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet"/>	
+		<!-- Bootstrap core CSS -->
+		<link href="vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"/>
+		<!-- Bootstrap theme -->
+		<link href="vendor/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet"/>	
 
-	    <link href="vendor/angular-loading-bar/build/loading-bar.css" rel="stylesheet" />
+		<link href="vendor/angular-loading-bar/build/loading-bar.css" rel="stylesheet" />
+
+		<link href="app/app.css" rel="stylesheet" />
+		<link href="app/user/user.css" rel="stylesheet" />
+		<link href="app/user/repos/repos.css" rel="stylesheet" />
 	</head>
 
 	<body>
@@ -25,7 +29,7 @@
 						<messages messages-data="messages"></messages>
 						<h1>{{ pageTitle }}</h1>
 						<div class="form-group">
-							<div class="input-group">
+							<div class="input-group username-field">
 								<div class="input-group-addon">@</div>
 								<input class="form-control" type="username" ng-model="username" placeholder="Enter GitHub username">
 							</div>
@@ -50,6 +54,8 @@
 		<script src="vendor/angular-ui-router/release/angular-ui-router.js"></script>
 
 		<script src="vendor/lodash/dist/lodash.js"></script>
+
+		<script src="vendor/d3/d3.js"></script>
 
 		<script src="app/app.js"></script>
 		<script src="app/app-controller.js"></script>

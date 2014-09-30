@@ -52,6 +52,19 @@ angular.module('app.common')
 		return promise;
 	};
 
+	instance.getData = function getData(url) {
+		config.funcName = Utils.getFunctionName(this, arguments);
+		
+		$log.log('GitHubService - Loading data from ' + url + ' ...');
+		var promise = $http.get(url, config)
+		.then( function onSuccess(result) {
+			$log.log(' GitHubService - Data from ' + url + ' loaded:', result.data);
+			return result.data;
+		});
+
+		return promise;
+	};	
+
 	instance.getRepoByName = function(name) {
 		return _.find(instance.repositories, { name: name });
 	};
