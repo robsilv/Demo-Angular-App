@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html ng-app="app">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<base href="/">
+		<title>AngularJS Boilerplate</title>
+	    <!-- Bootstrap core CSS -->
+	    <link href="vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"/>
+	    <!-- Bootstrap theme -->
+	    <link href="vendor/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet"/>	
+
+	    <link href="vendor/angular-loading-bar/build/loading-bar.css" rel="stylesheet" />
+	</head>
+
+	<body>
+
+		<div ng-controller="AppController" ng-cloak="">
+			<div class="wrapper">
+				<div class="content">
+					<div class="inner">
+						<messages messages-data="messages"></messages>
+						<h1>{{ pageTitle }}</h1>
+						<div class="form-group">
+							<div class="input-group">
+								<div class="input-group-addon">@</div>
+								<input class="form-control" type="username" ng-model="username" placeholder="Enter GitHub username">
+							</div>
+						</div>	
+						<button type="button" class="btn btn-primary" ng-click="submit()">Submit</button>
+
+						<div ui-view></div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Bootstrap core JavaScript
+		================================================== -->
+		<!-- Placed at the end of the document so the pages load faster -->
+		<script src="vendor/jquery/dist/jquery.js"></script>
+		<script src="vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+		<!-- <script src="assets/js/docs.min.js"></script> -->
+
+		<script src="vendor/angular/angular.js"></script>
+		<script src="vendor/angular-loading-bar/build/loading-bar.js"></script>
+		<script src="vendor/angular-ui-router/release/angular-ui-router.js"></script>
+
+		<script src="vendor/lodash/dist/lodash.js"></script>
+
+		<script src="app/app.js"></script>
+		<script src="app/app-controller.js"></script>
+		<script src="app/user/user-controller.js"></script>
+		<script src="app/repo/repo-controller.js"></script>
+		<script src="app/common/utils/utils.js"></script>
+		<script src="app/common/services/github-service.js"></script>
+		<script src="app/common/services/http-interceptor-service.js"></script>
+		<script src="app/common/services/message-service.js"></script>
+	</body>
+</html>
