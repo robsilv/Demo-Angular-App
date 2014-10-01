@@ -7,21 +7,19 @@ angular.module('app.components')
 		scope: {
 			messagesData: '='
 		},
-		templateUrl: 'common/components/messages-directive/messages-directive-template.html',
+		templateUrl: 'common/components/messages-directive-template.html',
 		link: function(scope) {
 
 			scope.getMessageStyle = function(messageType) {
-				if (messageType === "error")			return "flash-error";
-				else if (messageType === "success")		return "flash-success";
+				if (messageType === "error")			return "bg-danger";
+				else if (messageType === "success")		return "bg-success";
 				return null;
 			};
 
-			// scope.getMessage = function(data) {
-			// 	//console.log("getMessage");
-			// 	//console.log(data);
-
-			// 	return data.message;
-			// };
+			scope.getMessage = function(data) {
+				var message = data.response.data.message;
+				return message;
+			};
 		}
 	};
 });

@@ -1,4 +1,5 @@
 angular.module( 'app', [
+	'templates',
 	'app.user',
 	'app.repo',
 	'app.common',
@@ -28,15 +29,15 @@ angular.module( 'app', [
 		.state('user', {
 			url: '/user/{username}',
 			controller: 'UserController',
-			templateUrl: 'app/user/user-template.html',
+			templateUrl: 'user/user-template.html',
 			data: {
 				pageTitle: 'User'
 			}
 		})
 		.state('user.repos', {
 			url: '/repos',
-			//controller: 'RepoController',
-			templateUrl: 'app/user/repos/repos-template.html',
+			controller: 'ReposController',
+			templateUrl: 'user/repos/repos-template.html',
 			data: {
 				pageTitle: 'Repository'
 			}
@@ -44,14 +45,13 @@ angular.module( 'app', [
 		.state('user.repo', {
 			url: '/{repo}',
 			controller: 'RepoController',
-			templateUrl: 'app/repo/repo-template.html',
+			templateUrl: 'repo/repo-template.html',
 			data: {
 				pageTitle: 'Repository'
 			}
 		});
 
 	//$urlRouterProvider.otherwise('/feature1');
-
 
 	$locationProvider.hashPrefix('!');
 })

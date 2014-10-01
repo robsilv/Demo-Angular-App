@@ -4,6 +4,8 @@ angular.module('app.user')
 
 	if ( $stateParams.username !== undefined ) {
 
+		$log.log("UserController");
+
 		$scope.$parent.username = $stateParams.username;
 
 		GitHubService.getUser($stateParams.username, true).then( function( result ) {

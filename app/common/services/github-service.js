@@ -3,7 +3,7 @@ angular.module('app.common')
 .factory('GitHubService', function($q, $http, $log, config, Utils) {
 
 	var urlBase = config.api.root + config.api.users;
-	var config =  config.api.config;
+	var api_config =  config.api.config;
 
 
 	function GitHubService() { }
@@ -24,7 +24,7 @@ angular.module('app.common')
 		}
 
 		$log.log('GitHubService - Loading user...');
-		var promise = $http.get(urlBase + "/" + username, config)
+		var promise = $http.get(urlBase + "/" + username, api_config)
 		.then( function onSuccess(result) {
 			instance.user = angular.copy(result.data);
 			$log.log(' GitHubService - User loaded:', instance.user);
@@ -42,7 +42,7 @@ angular.module('app.common')
 		}
 
 		$log.log('GitHubService - Loading repos...');
-		var promise = $http.get(urlBase + "/" + username + "/repos", config)
+		var promise = $http.get(urlBase + "/" + username + "/repos", api_config)
 		.then( function onSuccess(result) {
 			instance.repositories = angular.copy(result.data);
 			$log.log(' GitHubService - Repos loaded:', instance.repositories);
@@ -56,7 +56,7 @@ angular.module('app.common')
 		config.funcName = Utils.getFunctionName(this, arguments);
 		
 		$log.log('GitHubService - Loading data from ' + url + ' ...');
-		var promise = $http.get(url, config)
+		var promise = $http.get(url, api_config)
 		.then( function onSuccess(result) {
 			$log.log(' GitHubService - Data from ' + url + ' loaded:', result.data);
 			return result.data;

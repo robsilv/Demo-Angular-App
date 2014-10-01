@@ -1,6 +1,6 @@
 <div class="flash-messages" ng-repeat="messageData in messagesData">
 	<div class="flash" ng-class="getMessageStyle(messageData.messageType)">
 		<span class="icon close"></span>
-		{{messageData.message}}
+		{{getMessage(messageData)}}
 	</div>
 </div>
